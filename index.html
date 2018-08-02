@@ -2,42 +2,45 @@
 <html lang="de">
 
 <head>
-    <meta name="viewport" content="initial-scale=1">
-    <meta charset="utf-8" />
-    <title>Home | Cafe Suarez</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <meta name="viewport" content="initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Cafe Suarez | Home</title>
+    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
-    <div class="outerbox">
-        <div class="innerbox">
-            <nav>
-                <img id="header-icon" src="./res/img/.png">
-                <ul>
-                    <!--
-                    <li id="active-nav-link"><a href="index.html">Home</a></li>
-                    <li><a href="./html/formular.html">Media</a></li>
-                    <li><a id="border-right" href="./html/tabelle.html">Bestellung aufgeben</a></li>
-                    -->
-                    <!-- * TODO: Dropdown-Liste hinzufügen -->
-                    <li id="active-nav-link"><a href=".html">Home</a></li>
-                    <li><a href=".html">Media</a></li>
-                    <li><a href=".html">Bestellen</a></li>
-                    <li><a href=".html">Jobs</a></li>
-                    <li><a id="border-right" accesskey="" href=".yhtml">Kontakt</a></li>
-                </ul>
-            </nav>
-            <div class="contentbox">
-                <article id="shadow">
-                    <p id="h"><b>Cafe Suarez</b> Alles aus eigener Herstellung</p>
-                </article>
+    <header>
+    </header>
+
+    <nav>
+        <div id="nav_content">
+            <div class="dropdown" id="dd_produkte">
+                <a href="#">PRODUKTE</a>
             </div>
-            <footer>
-                <hr/>
-                <p><b>Cafe Suarez</b> | <i>Suarezstraße 21</i> | <i>14057 Berlin</i></p>
-            </footer>
+            <div class="dropdown" id="dd_bestellung">
+                <a href="html/#">BESTELLUNG</a>
+            </div>
+            <div class="dropdown" id="dd_jobs">
+                <a href="html/#">JOBS</a>
+            </div>
+            <div class="dropdown" id="dd_kontakt">
+                <a href="html/#">KONTAKT</a>
+            </div>
         </div>
-    </div>
-</body>
+    </nav>
+
+    <main>
+        <div id="main_header">
+            <p id="p1">Welcome Home</p>
+        </div>
+        <div id="main_content">
+            Hello, and welcome to the app that bundles all your tools.
+        </div>
+    </main>
+
+    <footer>
+        <p>(c) <b>Cafe Suarez </b> 2018</p>
+    </footer>
 
 </html>

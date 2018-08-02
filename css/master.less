@@ -1,0 +1,293 @@
+/* Author: Arsonite | 2018 */
+
+/* Variables */
+
+@rose: #FF7766;
+@brick: #786350;
+@coffee: #C9A586;
+@header: @brick;
+
+@site: #353535;
+@site2: #666;
+@site3: #777;
+
+@font: Devanagari2;
+@font2: Georgia2;
+
+/* Custom Font */
+
+@font-face {
+    font-family: Kankin2;
+    src: url(../res/fonts/Kankin.ttf);
+}
+
+@font-face {
+    font-family: Georgia2;
+    src: url(../res/fonts/Kankin.ttf);
+}
+
+/* Reset margin & padding */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, Georgia2;
+    color: #111;
+    font-size: 12px;
+}
+
+/* Custom-Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #AAA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: @brick;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: @coffee;
+}
+
+textarea,
+input[type='text'],
+button {
+    outline: none;
+    border: none;
+}
+
+input[type="text"],
+textarea {
+    background-color: #AAA;
+    color: @rose;
+    resize: none;
+}
+
+input[type="text"]:hover,
+textarea:hover {
+    background-color: #CCC;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    background-color: @brick;
+}
+
+input[type="text"]:focus::placeholder,
+textarea:focus:placeholder {
+    color: transparent;
+}
+
+::placeholder {
+    padding: 0 2px;
+    opacity: 0.25;
+    color: black;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {}
+
+/* Body */
+
+body {
+    overflow-x: hidden;
+    background-color: @site;
+
+    /* Title Bar */
+    header {
+        background-color: @header;
+        z-index: 2;
+        position: sticky;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        font-size: 16px;
+
+        div {
+            padding: 0 20%;
+
+            img {
+                display: block;
+                float: left;
+                margin: 5px 10px 5px 0;
+                height: 15px;
+            }
+
+            img:hover {
+                cursor: pointer;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #FFF;
+            }
+        }
+
+        .search_container {
+            float: right;
+        }
+    }
+
+    /* Navigation Bar */
+    nav {
+        padding: 0 20%;
+
+        #nav_content {
+            display: flex;
+            justify-content: flex-end;
+            position: sticky;
+            top: 23px;
+            z-index: 1;
+
+            .dropdown {
+                position: relative;
+                width: 300px;
+                text-align: center;
+                background-size: 110%;
+                background-color: #555;
+                background-blend-mode: multiply;
+                background-position: center;
+                filter: grayscale(100%);
+                transition: 0.5s;
+
+                a {
+                    padding: 65px 5px;
+                    display: block;
+                    font-family: @font2;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: #FFF;
+                    transition: 0.5s;
+                }
+
+                img {
+                    z-index: -1;
+                }
+
+                #current {
+                    color: @brick;
+                }
+            }
+
+            #dd_produkte {
+                background-image: url(/res/img/nav_produkte.jpg);
+            }
+
+            #dd_bestellung {
+                background-image: url(/res/img/nav_bestellung.jpg);
+            }
+
+            #dd_jobs {
+                background-image: url(/res/img/nav_jobs.jpg);
+            }
+
+            #dd_kontakt {
+                background-image: url(/res/img/nav_kontakt.jpg);
+            }
+
+            .dropdown:hover {
+                filter: grayscale(0%);
+                background-color: #CCC;
+                background-size: 120%;
+
+                a {
+                    color: #000;
+                    background-color: #FFF;
+                    opacity: 0.5;
+                }
+
+                .dropdown-list {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    /* Main Container */
+    main {
+        padding: 34px 10px 10px 10px;
+        margin: 0 20%;
+        background-color: #454545;
+        height: 100vh;
+
+        /* The alert message boxes */
+        .alert {
+            padding: 15px;
+            color: #000;
+            margin-bottom: 15px;
+            display: block;
+            height: 15px;
+            left: 10px;
+        }
+
+        .alert:hover {
+            cursor: pointer;
+            filter: brightness(1.2);
+        }
+
+        #error {
+            background-color: #FF4433;
+        }
+
+        #warning {
+            background-color: #FFCC00;
+        }
+
+        #info {
+            background-color: #00CCFF;
+        }
+
+        #success {
+            background-color: #44FF33;
+        }
+
+        #main_header {
+            padding: 0 0 10px 5px;
+            display: flex;
+
+            #p1,
+            #p2 {
+                font-family: @font2;
+                font-size: 20px;
+            }
+
+            #p1 {
+                color: @brick;
+            }
+
+            #p2 {
+                padding-left: 15px;
+                color: white;
+            }
+        }
+
+        #main_content {
+            display: flex;
+            padding: 5px;
+            color: white;
+        }
+    }
+
+    /* Footer */
+    footer {
+        padding: 7px;
+        background-color: @brick;
+        opacity: 0.65;
+        width: 80%;
+
+        * {
+            color: #FFF;
+            font-size: 12px;
+        }
+    }
+}
