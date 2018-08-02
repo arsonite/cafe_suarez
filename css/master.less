@@ -1,18 +1,27 @@
 /* Author: Arsonite | 2018 */
 
-/* Variables */
+/* Colors */
 
 @rose: #FF7766;
 @brick: #786350;
 @coffee: #C9A586;
+@coffeelite: #EBC7A8;
 @header: @brick;
 
 @site: #353535;
 @site2: #666;
 @site3: #777;
 
+/* Fonts */
+
 @font: Devanagari2;
 @font2: Georgia2;
+
+/* Font-Sizes */
+
+@big: 22px;
+@mid: 18px;
+@normal: 14px;
 
 /* Custom Font */
 
@@ -104,40 +113,6 @@ body {
     overflow-x: hidden;
     background-color: @site;
 
-    /* Title Bar */
-    header {
-        background-color: @header;
-        z-index: 2;
-        position: sticky;
-        overflow: hidden;
-        display: block;
-        width: 100%;
-        font-size: 16px;
-
-        div {
-            padding: 0 20%;
-
-            img {
-                display: block;
-                float: left;
-                margin: 5px 10px 5px 0;
-                height: 15px;
-            }
-
-            img:hover {
-                cursor: pointer;
-                border-width: 5px;
-                border-style: solid;
-                border-color: #FFF;
-            }
-        }
-
-        .search_container {
-            float: right;
-        }
-    }
-
-    /* Navigation Bar */
     nav {
         padding: 0 20%;
 
@@ -165,7 +140,7 @@ body {
                     font-family: @font2;
                     text-align: center;
                     text-decoration: none;
-                    font-size: 16px;
+                    font-size: 20px;
                     color: #FFF;
                     transition: 0.5s;
                 }
@@ -202,8 +177,8 @@ body {
 
                 a {
                     color: #000;
-                    background-color: #FFF;
-                    opacity: 0.5;
+                    background-color: @coffeelite;
+                    opacity: 0.35;
                 }
 
                 .dropdown-list {
@@ -213,7 +188,35 @@ body {
         }
     }
 
-    /* Main Container */
+    #nav_2 {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        margin: 0 20%;
+        background-color: @header;
+
+        div {
+            img {
+                display: block;
+                float: left;
+                margin: 5px 10px 5px 0;
+                height: 15px;
+                border-width: 2px;
+                border-style: solid;
+                border-color: transparent;
+            }
+
+            img:hover {
+                cursor: pointer;
+                border-color: #FFF;
+            }
+        }
+
+        .search_container {
+            float: right;
+        }
+    }
+
     main {
         padding: 34px 10px 10px 10px;
         margin: 0 20%;
@@ -267,23 +270,24 @@ body {
 
             #p2 {
                 padding-left: 15px;
-                color: white;
+                color: #FFF;
             }
         }
 
         #main_content {
             display: flex;
             padding: 5px;
-            color: white;
+            color: #FFF;
         }
     }
 
     /* Footer */
     footer {
-        padding: 7px;
+        margin: 0px 20%;
+        padding: 10px;
         background-color: @brick;
         opacity: 0.65;
-        width: 80%;
+        height: 200px;
 
         * {
             color: #FFF;
