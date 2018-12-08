@@ -3,6 +3,7 @@
 /* Colors */
 /* Fonts */
 /* Font-Sizes */
+/* Box-Shadows */
 /* Custom Font */
 @font-face {
   font-family: Kankin2;
@@ -28,33 +29,26 @@
   background: #AAA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #786350;
-}
-::-webkit-scrollbar-thumb:hover {
   background: #c9a586;
 }
-textarea,
-input[type='text'],
-button {
+::-webkit-scrollbar-thumb:hover {
+  background: #ebc7a8;
+}
+input[type='text'] {
   outline: none;
   border: none;
 }
-input[type="text"],
-textarea {
+input[type="text"] {
   background-color: #AAA;
-  color: #ff7766;
-  resize: none;
+  color: #353535;
 }
-input[type="text"]:hover,
-textarea:hover {
+input[type="text"]:hover {
   background-color: #CCC;
 }
-input[type="text"]:focus,
-textarea:focus {
-  background-color: #786350;
+input[type="text"]:focus {
+  background-color: #FFF;
 }
-input[type="text"]:focus::placeholder,
-textarea:focus:placeholder {
+input[type="text"]:focus::placeholder {
   color: transparent;
 }
 ::placeholder {
@@ -67,17 +61,17 @@ textarea:focus:placeholder {
 body {
   overflow-x: hidden;
   background-color: #353535;
-  /* Footer */
 }
 body header {
+  background-color: #786350;
+}
+body header div {
   margin: 0 20%;
   height: 200px;
-  background-color: #786350;
   background-image: url(/res/img/banner.png);
   background-size: 100%;
   background-position: center;
-  /*background-image: url(/res/img/banner.png);
-        background-size: cover;*/
+  box-shadow: -2px 0px 20px #544130, 2px 0px 20px #544130;
 }
 body nav {
   padding: 0 20%;
@@ -87,7 +81,6 @@ body nav #nav_content {
   justify-content: flex-end;
   position: sticky;
   top: 23px;
-  z-index: 1;
 }
 body nav #nav_content .dropdown {
   position: relative;
@@ -131,7 +124,7 @@ body nav #nav_content #dd_kontakt {
 body nav #nav_content .dropdown:hover {
   filter: grayscale(0%);
   background-color: #CCC;
-  background-size: 120%;
+  background-size: 125%;
 }
 body nav #nav_content .dropdown:hover a {
   color: #000;
@@ -169,7 +162,6 @@ body main {
   margin: 0 20%;
   background-color: #454545;
   height: 100vh;
-  /* The alert message boxes */
 }
 body main .alert {
   padding: 15px;
@@ -226,4 +218,11 @@ body footer {
 body footer * {
   color: #FFF;
   font-size: 12px;
+}
+@media screen and (max-width: 800px) {
+  body header div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/res/img/banner_alt.png);
+  }
 }

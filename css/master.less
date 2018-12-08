@@ -3,9 +3,14 @@
 /* Colors */
 
 @rose: #FF7766;
+
+@bricklite: #9A8572;
 @brick: #786350;
+@brickdark: #544130;
+
 @coffee: #C9A586;
 @coffeelite: #EBC7A8;
+
 @header: @brick;
 
 @site: #353535;
@@ -22,6 +27,11 @@
 @big: 22px;
 @mid: 18px;
 @normal: 14px;
+
+/* Box-Shadows */
+
+@shadeL: -2px 0px 20px @brickdark;
+@shadeR: 2px 0px 20px @brickdark;
 
 /* Custom Font */
 
@@ -56,39 +66,32 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: @brick;
-}
-
-::-webkit-scrollbar-thumb:hover {
     background: @coffee;
 }
 
-textarea,
-input[type='text'],
-button {
+::-webkit-scrollbar-thumb:hover {
+    background: @coffeelite;
+}
+
+input[type='text'] {
     outline: none;
     border: none;
 }
 
-input[type="text"],
-textarea {
+input[type="text"] {
     background-color: #AAA;
-    color: @rose;
-    resize: none;
+    color: @site;
 }
 
-input[type="text"]:hover,
-textarea:hover {
+input[type="text"]:hover {
     background-color: #CCC;
 }
 
-input[type="text"]:focus,
-textarea:focus {
-    background-color: @brick;
+input[type="text"]:focus {
+    background-color: #FFF;
 }
 
-input[type="text"]:focus::placeholder,
-textarea:focus:placeholder {
+input[type="text"]:focus::placeholder {
     color: transparent;
 }
 
@@ -114,14 +117,15 @@ body {
     background-color: @site;
 
     header {
-        margin: 0 20%;
-        height: 200px;
+        div {
+            margin: 0 20%;
+            height: 200px;
+            background-image: url(/res/img/banner.png);
+            background-size: 100%;
+            background-position: center;
+            box-shadow: @shadeL, @shadeR;
+        }
         background-color: @header;
-        background-image: url(/res/img/banner.png);
-        background-size: 100%;
-        background-position: center;
-        /*background-image: url(/res/img/banner.png);
-        background-size: cover;*/
     }
 
     nav {
@@ -132,7 +136,6 @@ body {
             justify-content: flex-end;
             position: sticky;
             top: 23px;
-            z-index: 1;
 
             .dropdown {
                 position: relative;
@@ -184,7 +187,7 @@ body {
             .dropdown:hover {
                 filter: grayscale(0%);
                 background-color: #CCC;
-                background-size: 120%;
+                background-size: 125%;
 
                 a {
                     color: #000;
@@ -234,7 +237,6 @@ body {
         background-color: #454545;
         height: 100vh;
 
-        /* The alert message boxes */
         .alert {
             padding: 15px;
             color: #000;
@@ -292,7 +294,6 @@ body {
         }
     }
 
-    /* Footer */
     footer {
         margin: 0px 20%;
         padding: 10px;
@@ -303,6 +304,18 @@ body {
         * {
             color: #FFF;
             font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        header {
+            div {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url(/res/img/banner_alt.png);
+            }
         }
     }
 }
